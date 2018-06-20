@@ -1,0 +1,31 @@
+{
+  "name": "mymusic",
+  "version": "1.0.0",
+  "description": "我的音乐！我做主！",
+  "main": "app/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xuechihub/MyMusic"
+  },
+  "keywords": [
+    "Music"
+  ],
+  "author": "xuechihub",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xuechihub/MyTest/issues"
+  },
+  "homepage": "https://github.com/xuechihub/MyTest#readme",
+  "devDependencies": {
+    "webpack": "^4.12.0",
+    "webpack-cli": "^3.0.8"
+  },
+  "dependencies": {
+    "react": "^16.4.1",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1"
+  }
+}

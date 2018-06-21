@@ -22,6 +22,12 @@ module.exports = {
     module: {
         rules: [
             {
+                enforce: "pre",
+                test: /(\.jsx|\.js)$/,
+                exclude: /node_modules/,
+                loader: "eslint-loader",
+            },
+            {
                 test: /(\.jsx|\.js)$/,
                 use: {
                     loader: "babel-loader"
@@ -68,6 +74,10 @@ module.exports = {
 
         ]
     },
+    resolve: {
+        modules: [ 'node_modules' ],
+        extensions: [ '.js', '.json' ]
+    },
     optimization: {
         runtimeChunk: {
             name: "manifest"
@@ -99,6 +109,7 @@ module.exports = {
             'process.env.NODE_ENV': JSON.stringify('production')
         }),
         new webpack.ProvidePlugin({
+            "React": "react",
             _: 'lodash'
         }),
         new UglifyJsPlugin({
@@ -118,7 +129,7 @@ module.exports = {
         }),
         new ExtractTextPlugin("styles.css"),
         new HtmlWebpackPlugin({
-            template: './app/index.html',
+            template: './app/index.tmp.html',
         })
     ]
 };

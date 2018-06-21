@@ -21,15 +21,21 @@ module.exports = {
     },
     output: {
         filename: '[name].[hash].js',
-        chunkFilename: '[name].[hash].js',
+        chunkFilename: '[name].[chunkhash].js',
         path: path.resolve(__dirname, 'build')
     },
     module: {
         rules: [
             {
+                enforce: "pre",
+                test: /(\.jsx|\.js)$/,
+                exclude: /node_modules/,
+                loader: "eslint-loader",
+            },
+            {
                 test: /(\.jsx|\.js)$/,
                 use: {
-                    loader: "babel-loader"
+                    loader: "babel-loader",
                 },
                 exclude: /node_modules/
             },
@@ -73,20 +79,9 @@ module.exports = {
 
         ]
     },
-    optimization: {
-        runtimeChunk: {
-            name: "manifest"
-        },
-        splitChunks: {
-            cacheGroups: {
-                commons: {
-                    test: /[\\/]node_modules[\\/]/,
-                    name: "vendor",
-                    chunks: "all"
-                }
-            }
-        },
-        minimize: true
+    resolve: {
+        modules: [ 'node_modules' ],
+        extensions: [ '.js', '.json' ]
     },
     plugins: [
         new CleanWebpackPlugin(['build']),
@@ -95,13 +90,14 @@ module.exports = {
             'process.env.NODE_ENV': JSON.stringify('development')
         }),
         new webpack.ProvidePlugin({
+            "React": "react",
             _: 'lodash'
         }),
         new ExtractTextPlugin("styles.css"),
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
-            template: './app/index.html',
+            template: './app/index.tmp.html',
         })
     ]
 };

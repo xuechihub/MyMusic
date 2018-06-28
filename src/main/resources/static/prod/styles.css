@@ -1,0 +1,37 @@
+/*! 我的音乐 */
+.App__app--2kaLT {
+    width: 960px;
+    margin: 64px auto 0;
+}
+.App__audio--smOn0{
+    display: inline-block;
+    width: 100%;
+}
+.App__musicList--3rlvF {
+    padding: 0;
+}
+
+.App__musicItem--3o-_1 {
+    list-style: none;
+    height: 48px;
+    line-height: 48px;
+    padding-left: 32px;
+}
+.App__musicItem--3o-_1:nth-child(odd){
+    background-color: #F2F2F2;
+}
+
+.App__musicItem--3o-_1:nth-child(even){
+    background-color: #FFFFFF;
+}
+.App__musicItem--3o-_1:hover{
+    background-color: #D9D9D9;
+}
+
+
+
+.App__currentMusic--3D9gi {
+    background-color: #403F3E !important;
+    color: #E1E1E1;
+}
+/*# sourceMappingURL=styles.css.map*/

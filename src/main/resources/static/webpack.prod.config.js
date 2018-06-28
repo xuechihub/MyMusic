@@ -17,7 +17,7 @@ module.exports = {
         filename: '[name].[chunkhash].js',
         chunkFilename: '[name].[chunkhash].js',
         path: path.resolve(__dirname, 'prod'),
-        publicPath: '/'
+        publicPath: '/prod/'
     },
     module: {
         rules: [
@@ -106,11 +106,13 @@ module.exports = {
         new CleanWebpackPlugin(['prod']),
         new webpack.BannerPlugin('我的音乐'),
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify('production')
+            'process.env.NODE_ENV': JSON.stringify('production'),
+            '__site__':JSON.stringify('')
         }),
         new webpack.ProvidePlugin({
             "React": "react",
-            _: 'lodash'
+            _: 'lodash',
+            "fetch":"isomorphic-fetch"
         }),
         new UglifyJsPlugin({
             sourceMap: true,

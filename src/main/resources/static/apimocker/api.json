@@ -1,0 +1,28 @@
+{
+  "note": "This is a sample config file. You should change the mockDirectory to a more reasonable path.",
+  "mockDirectory": "./apimocker/rest",
+  "staticDirectory": "./apimocker/static",
+  "staticPath": "/rest",
+  "quiet": false,
+  "port": "5000",
+  "latency": 50,
+  "logRequestHeaders": false,
+  "allowedDomains": ["*"],
+  "allowedHeaders": [
+    "Content-Type"
+  ],
+  "webServices": {
+    "rest/music/list": {
+      "verbs": [
+        "get"
+      ],
+      "responses": {
+        "get": {
+          "httpStatus": 200,
+          "mockFile": "music/list.json"
+        },
+        "contentType":"application/json"
+      }
+    }
+  }
+}

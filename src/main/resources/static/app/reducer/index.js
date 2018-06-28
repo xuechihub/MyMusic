@@ -1,11 +1,6 @@
 import {combineReducers} from "redux";
+import Music from "./music";
 
-const errorMessage = (state = {}, action) => {
-    return state;
-};
-
-const rootReducer = combineReducers({
-    errorMessage
+export default combineReducers({
+    Music
 });
-
-export default rootReducer;

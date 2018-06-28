@@ -87,11 +87,13 @@ module.exports = {
         new CleanWebpackPlugin(['build']),
         new webpack.BannerPlugin('我的音乐'),
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify('development')
+            'process.env.NODE_ENV': JSON.stringify('development'),
+            '__site__':JSON.stringify('http://localhost:5000')
         }),
         new webpack.ProvidePlugin({
             "React": "react",
-            _: 'lodash'
+            _: 'lodash',
+            "fetch":"isomorphic-fetch"
         }),
         new ExtractTextPlugin("styles.css"),
         new webpack.NamedModulesPlugin(),

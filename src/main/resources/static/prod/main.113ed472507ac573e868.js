@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{360:function(e,n,t){"use strict";var o,d=t(2),l=(o=d)&&o.__esModule?o:{default:o};(0,t(134).render)(l.default.createElement("div",null,"hello webpack!"),document.getElementById("root"))}},[[360,0,1]]]);
-//# sourceMappingURL=main.113ed472507ac573e868.js.map

@@ -38,7 +38,7 @@ class MusicPlayer extends Component {
         const {index} = this.state.currentMusic;
         let nextIndex = index + 1 > list.length - 1 ? 0 : index + 1;
         this.setState({
-            currentMusic: {...list[nextIndex], nextIndex}
+            currentMusic: {...list[nextIndex], index: nextIndex}
         });
         this.refs.player.autoplay = true;
         this.forceUpdate();

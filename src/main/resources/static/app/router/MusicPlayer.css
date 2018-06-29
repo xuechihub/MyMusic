@@ -1,0 +1,35 @@
+.app {
+    width: 960px;
+    margin: 64px auto 0;
+}
+.audio{
+    display: inline-block;
+    width: 100%;
+}
+.musicList {
+    padding: 0;
+}
+
+.musicItem {
+    list-style: none;
+    height: 48px;
+    line-height: 48px;
+    padding-left: 32px;
+}
+.musicItem:nth-child(odd){
+    background-color: #F2F2F2;
+}
+
+.musicItem:nth-child(even){
+    background-color: #FFFFFF;
+}
+.musicItem:hover{
+    background-color: #D9D9D9;
+}
+
+
+
+.currentMusic {
+    background-color: #403F3E !important;
+    color: #E1E1E1;
+}
